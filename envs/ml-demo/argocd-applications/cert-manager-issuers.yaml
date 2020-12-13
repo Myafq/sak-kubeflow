@@ -1,0 +1,18 @@
+"apiVersion": "argoproj.io/v1alpha1"
+"kind": "Application"
+"metadata":
+  "name": "cert-manager-issuers"
+  "namespace": "argocd"
+"spec":
+  "destination":
+    "namespace": "cert-manager"
+    "server": "https://kubernetes.default.svc"
+  "project": "default"
+  "source":
+    "path": "envs/ml-demo/argocd-applications/issuers"
+    "repoURL": "https://github.com/Myafq/sak-kubeflow"
+    "targetRevision": "init"
+  "syncPolicy":
+    "automated":
+      "prune": true
+      "selfHeal": true
