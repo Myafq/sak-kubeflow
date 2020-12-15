@@ -35,4 +35,5 @@ module "sak_kubeflow" {
 
   argo_path_prefix = "envs/ml-demo/"
   argo_apps_dir    = "argocd-applications"
+  aws_region = "us-east-2"
 }
